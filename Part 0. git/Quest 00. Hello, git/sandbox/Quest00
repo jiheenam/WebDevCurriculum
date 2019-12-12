@@ -1,0 +1,223 @@
+Last login: Thu Dec 12 13:42:09 on ttys000
+namjihuis-MacBook-Pro:~ jiheenam$ pwd
+/Users/jiheenam
+namjihuis-MacBook-Pro:~ jiheenam$ cd gitfth/WebDevCurriculum/
+namjihuis-MacBook-Pro:WebDevCurriculum jiheenam$ ls
+LICENSE			Part 2. JavaScript	Part 5. Web 2018
+Part 0. git		Part 3. node.js		Part 6. Final Project
+Part 1. HTML & CSS	Part 4. Database	README.md
+namjihuis-MacBook-Pro:WebDevCurriculum jiheenam$ cd "Part 0. git"/
+namjihuis-MacBook-Pro:Part 0. git jiheenam$ ls
+Quest 00. Hello, git	testfile
+namjihuis-MacBook-Pro:Part 0. git jiheenam$ cd "Quest 00. Hello, git"/
+namjihuis-MacBook-Pro:Quest 00. Hello, git jiheenam$ ls
+README.md	sandbox
+namjihuis-MacBook-Pro:Quest 00. Hello, git jiheenam$ cd sandbox/
+namjihuis-MacBook-Pro:sandbox jiheenam$ ls
+DUMMY.txt	text_1		text_3
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch
+  branch_1
+  master
+* testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch -a
+  branch_1
+  master
+* testBranch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch_1
+  remotes/origin/master
+  remotes/origin/testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+namjihuis-MacBook-Pro:sandbox jiheenam$ vi textInMaster
+namjihuis-MacBook-Pro:sandbox jiheenam$ git add .
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   textInMaster
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ git commit
+[master 3d05afc] text file in master
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Part 0. git/Quest 00. Hello, git/sandbox/textInMaster
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 570 bytes | 570.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jiheenam/WebDevCurriculum.git
+   bc6550f..3d05afc  master -> master
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch -a
+  branch_1
+* master
+  testBranch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch_1
+  remotes/origin/master
+  remotes/origin/testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git checkout testBranch
+Switched to branch 'testBranch'
+namjihuis-MacBook-Pro:sandbox jiheenam$ ls
+DUMMY.txt	text_1		text_3
+namjihuis-MacBook-Pro:sandbox jiheenam$ git merge branch master
+merge: branch - not something we can merge
+namjihuis-MacBook-Pro:sandbox jiheenam$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+namjihuis-MacBook-Pro:sandbox jiheenam$ git merge testBranch
+Merge made by the 'recursive' strategy.
+ Part 0. git/Quest 00. Hello, git/sandbox/text_1 | 3 +++
+ Part 0. git/Quest 00. Hello, git/sandbox/text_3 | 2 ++
+ 2 files changed, 5 insertions(+)
+ create mode 100644 Part 0. git/Quest 00. Hello, git/sandbox/text_1
+ create mode 100644 Part 0. git/Quest 00. Hello, git/sandbox/text_3
+namjihuis-MacBook-Pro:sandbox jiheenam$ clear
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ pwd
+/Users/jiheenam/gitfth/WebDevCurriculum/Part 0. git/Quest 00. Hello, git/sandbox
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch
+  branch_1
+* master
+  testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git checkout testBranch
+Switched to branch 'testBranch'
+namjihuis-MacBook-Pro:sandbox jiheenam$ vi textOftestBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git add testOftestBranch
+fatal: pathspec 'testOftestBranch' did not match any files
+namjihuis-MacBook-Pro:sandbox jiheenam$ git add textOftestBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch testBranch
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   textOftestBranch
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ git commit textOftestBranch
+[testBranch 4b3e5db] commit text file in testBranch
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Part 0. git/Quest 00. Hello, git/sandbox/textOftestBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push textOftestBranch
+fatal: 'textOftestBranch' does not appear to be a git repository
+fatal: Could not read from remote repository.
+
+Please make sure you have the correct access rights
+and the repository exists.
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push
+fatal: The current branch testBranch has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin testBranch
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push origin testBranch
+Enumerating objects: 15, done.
+Counting objects: 100% (15/15), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (7/7), 817 bytes | 817.00 KiB/s, done.
+Total 7 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jiheenam/WebDevCurriculum.git
+   0b4c99c..4b3e5db  testBranch -> testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch
+  branch_1
+  master
+* testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch -a
+  branch_1
+  master
+* testBranch
+  remotes/origin/HEAD -> origin/master
+  remotes/origin/branch_1
+  remotes/origin/master
+  remotes/origin/testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git merge testBranch
+Already up to date.
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch testBranch
+nothing to commit, working tree clean
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push origin master
+Enumerating objects: 13, done.
+Counting objects: 100% (13/13), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (5/5), 630 bytes | 630.00 KiB/s, done.
+Total 5 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/jiheenam/WebDevCurriculum.git
+   3d05afc..d3af8b9  master -> master
+namjihuis-MacBook-Pro:sandbox jiheenam$ git branch
+  branch_1
+  master
+* testBranch
+namjihuis-MacBook-Pro:sandbox jiheenam$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash
+No local changes to save
+namjihuis-MacBook-Pro:sandbox jiheenam$ vi testForStash
+namjihuis-MacBook-Pro:sandbox jiheenam$ git add testForStash
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   testForStash
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash
+Saved working directory and index state WIP on master: d3af8b9 Merge branch 'testBranch'
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash list
+stash@{0}: WIP on master: d3af8b9 Merge branch 'testBranch'
+stash@{1}: WIP on branch_1: 02a80bc Delete swap file
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash apply
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   testForStash
+
+namjihuis-MacBook-Pro:sandbox jiheenam$ git commit testForStash
+[master bb0a3a2] commit stash file
+ 1 file changed, 1 insertion(+)
+ create mode 100644 Part 0. git/Quest 00. Hello, git/sandbox/testForStash
+namjihuis-MacBook-Pro:sandbox jiheenam$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+namjihuis-MacBook-Pro:sandbox jiheenam$ git push origin master
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 519 bytes | 519.00 KiB/s, done.
+Total 6 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+To https://github.com/jiheenam/WebDevCurriculum.git
+   d3af8b9..bb0a3a2  master -> master
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash drop stash@{0}
+Dropped stash@{0} (a18ade40336541523307fe148ad190fea8e7c18a)
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash list
+stash@{0}: WIP on branch_1: 02a80bc Delete swap file
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash drop stash@{0}
+Dropped stash@{0} (e2274f07bca06f7d96e7d0ee20b768414ac1344a)
+namjihuis-MacBook-Pro:sandbox jiheenam$ git stash list
+namjihuis-MacBook-Pro:sandbox jiheenam$ 
+
